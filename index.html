@@ -152,6 +152,14 @@
             display: none;
             text-align: center;
         }
+        /* 新增结果页标题样式 */
+        .result-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
         .age-circle {
             width: 180px;
             height: 180px;
@@ -172,11 +180,13 @@
         .age-circle.theme5 { background: linear-gradient(135deg, #ed8936 0%, #f6ad55 100%); }
         .age-circle.theme6 { background: linear-gradient(135deg, #718096 0%, #4a5568 100%); }
 
+        /* 放大年龄对比文字（原15px → 18px）+ 加粗 */
         .age-compare {
-            padding: 10px;
+            padding: 12px 15px;
             border-radius: 6px;
-            font-size: 15px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 25px;
             display: inline-block;
         }
         .age-compare.theme1 { background: #fff0ed; color: #ff7e5f; }
@@ -191,12 +201,15 @@
             font-weight: 700;
             line-height: 1;
         }
+        /* 放大年龄圈里的“心理年龄”文字（原16px → 22px）+ 加粗 */
         .age-text {
-            font-size: 16px;
-            margin-top: 5px;
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: 8px;
         }
         .age-diff {
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 20px;
         }
         .radar-chart {
             width: 100%;
@@ -352,6 +365,9 @@
         </div>
 
         <div class="result-box" id="resultBox">
+            <!-- 新增结果页标题 -->
+            <div class="result-title">你的心理年龄测试结果</div>
+            
             <div class="age-circle" id="ageCircle">
                 <div class="age-number" id="mentalAgeNum">0</div>
                 <div class="age-text">心理年龄</div>
@@ -708,6 +724,7 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const resultBox = document.getElementById('resultBox');
+        const resultTitle = document.getElementById('resultTitle'); // 新增结果页标题元素
         const ageCircle = document.getElementById('ageCircle');
         const mentalAgeNum = document.getElementById('mentalAgeNum');
         const ageCompare = document.getElementById('ageCompare');
